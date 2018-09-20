@@ -19,6 +19,9 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven {
+            url "C:\\Users\\anmol\\AndroidStudioProjects\\NativeRNmodules\\node_modules\\react-native\\android"
+        }
     }
 }
 
