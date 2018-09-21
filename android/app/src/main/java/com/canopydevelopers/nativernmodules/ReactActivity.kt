@@ -13,6 +13,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import com.canopydevelopers.nativernmodules.Fragments.*
 
 import kotlinx.android.synthetic.main.activity_react.*
 import kotlinx.android.synthetic.main.fragment_react.view.*
@@ -81,29 +82,37 @@ class ReactActivity : AppCompatActivity() {
         override fun getItem(position: Int): Fragment {
             when (position) {
                 0 -> {
-                    return neworders()
+                    return firebasefragment()
                 }
                 1 -> {
-                    return currentorders()
+                    return apifragment()
                 }
                 2 -> {
-                    return oldorders()
+                    return sqlitefragment()
                 }
-                else -> return
+                3 -> {
+                    return hardwarefragment()
+                }
+                4 -> {
+                    return uicomponents()
+                }
+                else -> return uicomponents()
             }
 
         }
 
         override fun getCount(): Int {
             // Show 3 total pages.
-            return 3
+            return 5
         }
 
         override fun getPageTitle(position: Int): CharSequence? {
             when (position) {
-                0 -> return "New"
-                1 -> return "Current"
-                2 -> return "Old"
+                0 -> return "Firebase"
+                1 -> return "Api"
+                2 -> return "Sqlite"
+                3 -> return "Hardware"
+                4 -> return "UIcomp"
             }
             return null
         }
